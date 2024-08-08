@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f2f5;
+        color: #333;
+    } 
+    .navbar {
+        background-color: #007bff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+    }
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 10px;
+    }
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        padding: 20px;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn{
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    footer {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    </style>
+    {% block extra_styles %}{% endblock %}
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">
+            <a href="{{ url_for('index') }}">Identity App</a>
+            </div>
+            <nav>
+                <a href="{{ url_for('index') }}">Home</a>
+                {% if session.get("user") %}
+                <a href="{{ url_for('logout') }}">logout</a>
+                {% else %}
+                <a href="{{ url_for('login') }}">login</a>
+                {% endif %}
+                </nav>
+                </header>
+                <div class="container">
+                    {% block content %}{% endblock %}
+                </div>
+                <footer>
+                    <p>&copy; 2024 my Flask App</p>
+                </footer>
+                {% block extra_scripts %}{% endblock}
+</body>
+</html>    
+                
+

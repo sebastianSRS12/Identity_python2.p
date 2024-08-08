@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Home- Identity Proyect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: linear-gradient(135deg, #ece9e6, #ffffff);
+        color: hidden;
+    }  
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+    }
+    header {
+        width: 100%;
+        background-color: #007bff;
+        padding: 20px 0;
+        color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        animation: slideInDown 1s ease-in-out;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    .login-section {
+        background: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        margin-top: 20px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    .login-section h2 {
+        margin-bottom: 20px;
+    }
+    .login-section input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: 5px;
+        transition: border-color 0.3s;
+    }
+    .login-section input:focus {
+        border-color: #007bff;
+    }
+    .login-section button{
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .login-section button:hover {
+        background-color: #0056b3;
+    }
+    .ai-companion {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        animation: bounceIn 1s ease-in-out;
+    }
+    .ai-companion img{
+        width: 40px;
+        height: 40px;
+    }
+    .chatbox {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 300px;
+        max-width: 100%;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        animation: fadeInup 0.5 ease-in-out;
+    }
+    .chatbox-header {
+        background-color: #007bff;
+        padding: 10px;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .chatbox-header  {
+        padding: 10px;
+        height: 200px;
+        overflow-y: auto;
+    }
+    .chatbox-footer {
+        display: flex;
+        border: 1px solid #ccc;
+    }
+    .chatbox-footer input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-top-left-radius: 10px;
+    }
+    .chatbox-footer button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .chatbox-footer button:hover {
+        background-color: #0056b3;
+    }
+    @keyframes slideIndown {
+        form {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInup {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(20px);
+        }
+    }
+    @keyframes bounceIn {
+        from, 20%, 40%, 60%, 80%, to {
+            animation-timing-function:cubic-bezier(0.215,0.61,0.355,1);
+        }
+        0% {
+            opacity: 0;
+            transform: scale3d(0.3, 0.3, 0.3);
+        }
+        20% {
+            transform: scale3d(1,1, 1.1, 1.1);
+            
+        }
+        40% {
+            transform: scale3d(0.9, 0,9, 0.9);
+        }
+        60% {
+            opacity: 1;
+            transform: scale3d(1.03, 1.03, 1.03);
+        }
+        80% {
+            transform: rotate3d(0.97, 0.97, 0.97);
+        }
+        to {
+            opacity: 1;
+            transform: scale3d(1, 1, 1);
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Identity Proyect</h1>
+    </header>
+    <div class="container">
+        <div class="login-section">
+            <h2>Login</h2>
+            <form id="Login-form">
+                <input type="text" id="username" class="input-field" placeholder="Username" required>
+                <input type="password" id="password" class="input-field" placeholder="Passowrd" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            </div>
+            <div class="ai-companion" id="ai-companion">
+                <img src="https://via.placeholder.com/40" alt="AI ai-companion">
+            </div>
+            <div class="chatbox" id="chatbox-content"></div>
+            <div class="chatbox-header">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.getElementById('ai-companion').addEventListener('click', function() {
+      const chatbox = document.getElementById('chatbox');
+      chatbox.style.display = chatbox.style.display === 'none' ?  'flex' : 'none';
+    });
+
+    document.getElementById('send-btn').addEventListener('click', function() {
+      const chatInput = document.getElementById('chat-input');
+      const chatContent = document.getElementById('chat-input');
+      const message = chatInput.value.trim();
+      if (message) {
+        const messageElem = document.createElement('div');
+        messageElem.textContent = message;
+        chatContent.appendChild(messageElem);
+        chatInput.value = '';
+      }  
+    });
+    </script>
+</body>
+</html>          

@@ -1,0 +1,100 @@
+.register-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 50%;
+    margin: 10% auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+.input-filed {
+    width: 100% ;
+    padding: 10px;
+    border:  1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3;
+}
+.input-filed:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+.input-filed:focus + label {
+    top: -20;
+    font-size: 0.75em;
+    color: #007bff;
+}
+label {
+    top: 10px;
+    left: 10px;
+    color: #aaa;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+.input-filed:valid + label {
+    top: -20;
+    font-size: 0.75em;
+    color: #007bff;
+}
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.btn:hover {
+    background-color: #0056b3;
+    transform: rotateY('-2px');
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+.tooltip {
+    position: absolute;
+    top: -30px;
+    right: 10px;
+    background: #007bff;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: ocpacity 0.3s;
+}
+.input-group:hover .tooltip {
+    opacity: 1;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.ai-companion {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    animation: slideIn 0.5s ease-in-out;
+}
+.ai-header {
+    background: #007bff;
+}
+   
+
+    

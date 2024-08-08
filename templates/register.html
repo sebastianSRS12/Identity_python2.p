@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="register-container">
+     <h1>Register</h1>
+    <form id="register-form">
+    <div class="input-group">
+      <input type="text" id="username" class="input-field" placeholder="Username" required>
+      <label for="username">Password</label>
+      <span id="password-error" class="error-message">Password is required</span>
+  </div>
+  <div class="input-group">
+    <input type="email" id="email" class="input-filed" placeholder="Email" required>
+    <label for="email">Email</label>   
+    <span id="email-error" class="error-message">Email is required</span>
+  </div>
+    <button type="submit" class="btn">Register</button>
+  </form>
+</div>
+
+<div class="ai-footer">
+    <input type="text" id="ai-input" class="ai-input-field" placeholder="Type your query...">
+    <button class="ai-send-btn" id="ai-send-btn">Send</button>
+  </div>
+</div>
+<button class="ai-toggle-btn" id="ai-toggle-btn">Need Help?</button>
+ {% endblock %}
+ 
+ {% block scripts %}
+ <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+ {% endblock %}
